@@ -57,3 +57,25 @@ exports.getAssetData = async (req, res, next) => {
         next(error);
     }
 };
+
+// Get all project assets with their sensors
+exports.getProjectAssets = async (req, res, next) => {
+    try {
+        // Get all assets and populate their sensors
+        const assets = await Asset.find().populate('sensors');
+
+        // Format the response as requested
+        const response = {
+            project: {
+                assets: assets.map(asset => ({
+                    ...asset.toObject(),
+                    sensors: asset.sensors
+                }))
+            }
+        };
+
+        res.status(200).json(response);
+    } catch (error) {
+        next(error);
+    }
+};

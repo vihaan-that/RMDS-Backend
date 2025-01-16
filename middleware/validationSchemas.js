@@ -65,7 +65,13 @@ const sensorSchemas = {
                 'any.invalid': 'Invalid sensor ID format',
                 'any.required': 'Sensor ID is required'
             }),
-        ...timeframeSchema
+        timeRange: Joi.number().integer().min(1).max(60)
+            .messages({
+                'number.base': 'Time range must be a number',
+                'number.integer': 'Time range must be an integer',
+                'number.min': 'Time range must be at least 1 minute',
+                'number.max': 'Time range cannot exceed 60 minutes'
+            })
     }),
 
     getSensorStats: Joi.object({
@@ -75,6 +81,14 @@ const sensorSchemas = {
                 'any.required': 'Sensor ID is required'
             }),
         ...timeframeSchema
+    }),
+
+    liveSensorParams: Joi.object({
+        sensorId: Joi.string().custom(isValidObjectId).required()
+            .messages({
+                'any.invalid': 'Invalid sensor ID format',
+                'any.required': 'Sensor ID is required'
+            })
     })
 };
 
@@ -107,6 +121,14 @@ const assetSchemas = {
                 'any.required': 'Asset ID is required'
             }),
         ...timeframeSchema
+    }),
+
+    liveAssetParams: Joi.object({
+        assetId: Joi.string().custom(isValidObjectId).required()
+            .messages({
+                'any.invalid': 'Invalid asset ID format',
+                'any.required': 'Asset ID is required'
+            })
     })
 };
 
@@ -151,25 +173,44 @@ const incidentSchemas = {
                 'string.empty': 'System cannot be empty',
                 'any.required': 'System is required'
             }),
-        Priority: Joi.string().valid('P1', 'P2', 'P3').required()
+        Description: Joi.string().required().trim()
             .messages({
-                'any.only': 'Priority must be one of: P1, P2, P3',
+                'string.empty': 'Description cannot be empty',
+                'any.required': 'Description is required'
+            }),
+        Status: Joi.string().required().trim()
+            .messages({
+                'string.empty': 'Status cannot be empty',
+                'any.required': 'Status is required'
+            }),
+        Priority: Joi.string().required().trim()
+            .messages({
+                'string.empty': 'Priority cannot be empty',
                 'any.required': 'Priority is required'
             }),
-        Severity: Joi.string().valid('S1', 'S2', 'S3').required()
+        AssignedTo: Joi.string().required().trim()
             .messages({
-                'any.only': 'Severity must be one of: S1, S2, S3',
-                'any.required': 'Severity is required'
-            }),
-        Owner: Joi.string().required().trim()
-            .messages({
-                'string.empty': 'Owner cannot be empty',
-                'any.required': 'Owner is required'
+                'string.empty': 'AssignedTo cannot be empty',
+                'any.required': 'AssignedTo is required'
             })
     }),
 
     getIncidents: Joi.object({
-        ...timeframeSchema
+        startTime: Joi.date().iso()
+            .messages({
+                'date.base': 'Start time must be a valid date',
+                'date.format': 'Start time must be in ISO format'
+            }),
+        endTime: Joi.date().iso().min(Joi.ref('startTime'))
+            .messages({
+                'date.base': 'End time must be a valid date',
+                'date.format': 'End time must be in ISO format',
+                'date.min': 'End time must be after start time'
+            }),
+        status: Joi.string().valid('open', 'closed', 'all')
+            .messages({
+                'any.only': 'Status must be one of: open, closed, all'
+            })
     })
 };
 
