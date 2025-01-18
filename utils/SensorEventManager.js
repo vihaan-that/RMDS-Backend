@@ -22,14 +22,12 @@ class SensorEventManager {
         this.clients.set(id, { response, sensors });
         console.log(`Total clients connected: ${this.clients.size}`);
 
-        // Send initial comment to establish connection
-        response.write('data: :ok\n\n');
 
         // Set up heartbeat to keep connection alive
         const heartbeat = setInterval(() => {
             if (this.clients.has(id)) {
                 console.log(`Sending heartbeat to client ${id}`);
-                response.write('data: :ping\n\n');
+                response.write('data: { message: "ping" }\n\n');
             } else {
                 console.log(`Client ${id} no longer exists, clearing heartbeat`);
                 clearInterval(heartbeat);
