@@ -29,7 +29,6 @@ mongoose.connect(process.env.MONGODB_URI, {
 
 // Middleware
 app.use(helmet()); // Security headers
-app.use(compression()); // Compress responses
 app.use(morgan('dev')); // HTTP request logging
 app.use(cors()); // Enable CORS
 app.use(express.json()); // Parse JSON bodies
