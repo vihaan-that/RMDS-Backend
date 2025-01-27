@@ -1,14 +1,22 @@
-class SensorEventManager {
+class AssetEventManager {
     constructor() {
-        this.clients = new Map(); // Map of clientId -> { response, sensors }
+        this.clients = new Map(); // Map of clientId -> { response, assets }
+        this.assetSensors = new Map(); // Map of assetId -> Set of sensorIds
+        this.sensorData = new Map(); // Map of sensorId -> latest data
         this.clientId = 0;
-        console.log('SensorEventManager initialized');
+        console.log('AssetEventManager initialized');
+    }
+
+    // Register sensors for an asset
+    registerAssetSensors(assetId, sensorIds) {
+        console.log(`Registering sensors for asset ${assetId}:`, sensorIds);
+        this.assetSensors.set(assetId, new Set(sensorIds));
     }
 
     // Add a new client connection
-    addClient(response, sensors = []) {
+    addClient(response, assets = []) {
         const id = this.clientId++;
-        console.log(`Adding new client ${id} for sensors:`, sensors);
+        console.log(`Adding new client ${id} for assets:`, assets);
         
         // Set headers for SSE
         response.writeHead(200, {
@@ -19,15 +27,14 @@ class SensorEventManager {
         });
 
         // Store client information
-        this.clients.set(id, { response, sensors });
+        this.clients.set(id, { response, assets });
         console.log(`Total clients connected: ${this.clients.size}`);
-
 
         // Set up heartbeat to keep connection alive
         const heartbeat = setInterval(() => {
             if (this.clients.has(id)) {
                 console.log(`Sending heartbeat to client ${id}`);
-                response.write('data: { message: "ping" }\n\n');
+                response.write('data: { "type": "ping" }\n\n');
             } else {
                 console.log(`Client ${id} no longer exists, clearing heartbeat`);
                 clearInterval(heartbeat);
@@ -61,6 +68,45 @@ class SensorEventManager {
         }
     }
 
+    // Update sensor data and trigger asset updates
+    updateSensorData(sensorId, data) {
+        console.log(`Updating sensor data for sensor ${sensorId}:`, data);
+        this.sensorData.set(sensorId, data);
+
+        // Find assets that contain this sensor
+        this.assetSensors.forEach((sensors, assetId) => {
+            if (sensors.has(sensorId)) {
+                this.broadcastAssetData(assetId);
+            }
+        });
+    }
+
+    // Get aggregated data for an asset
+    getAssetData(assetId) {
+        const sensors = this.assetSensors.get(assetId);
+        if (!sensors) {
+            console.log(`No sensors found for asset ${assetId}`);
+            return null;
+        }
+
+        const sensorDataArray = [];
+        sensors.forEach(sensorId => {
+            const data = this.sensorData.get(sensorId);
+            if (data) {
+                sensorDataArray.push({
+                    sensorId,
+                    ...data
+                });
+            }
+        });
+
+        return {
+            assetId,
+            timestamp: new Date().toISOString(),
+            sensors: sensorDataArray
+        };
+    }
+
     // Send data to specific client
     sendToClient(clientId, data) {
         console.log(`Attempting to send data to client ${clientId}:`, data);
@@ -83,50 +129,21 @@ class SensorEventManager {
         }
     }
 
-    // Send data to all clients that are monitoring the specified sensors
-    broadcastSensorData(sensorId, data) {
-        console.log(`Broadcasting sensor data for sensor ${sensorId}:`, data);
-        console.log(`Current clients: ${this.clients.size}`);
-        
-        this.clients.forEach((client, clientId) => {
-            try {
-                console.log(`Checking client ${clientId} for sensor ${sensorId}. Monitoring sensors:`, client.sensors);
-                // Send if client is monitoring all sensors (empty array) or specific sensor
-                if (client.sensors.length === 0 || client.sensors.includes(sensorId)) {
-                    console.log(`Sending data to client ${clientId}`);
-                    this.sendToClient(clientId, {
-                        sensorId,
-                        ...data
-                    });
-                } else {
-                    console.log(`Client ${clientId} not monitoring sensor ${sensorId}`);
-                }
-            } catch (error) {
-                console.error(`Error broadcasting to client ${clientId}:`, error);
-                this.removeClient(clientId);
-            }
-        });
-    }
+    // Broadcast asset data to relevant clients
+    broadcastAssetData(assetId) {
+        console.log(`Broadcasting asset data for asset ${assetId}`);
+        const assetData = this.getAssetData(assetId);
+        if (!assetData) return;
 
-    // Send data to all clients monitoring an asset's sensors
-    broadcastAssetData(assetId, sensorsData) {
-        console.log(`Broadcasting asset data for asset ${assetId}:`, sensorsData);
-        
         this.clients.forEach((client, clientId) => {
             try {
-                // Filter data based on client's sensor subscription
-                const filteredData = client.sensors.length === 0 
-                    ? sensorsData 
-                    : sensorsData.filter(data => client.sensors.includes(data.sensorId));
-                
-                if (filteredData.length > 0) {
-                    console.log(`Sending filtered data to client ${clientId}:`, filteredData);
+                // Send if client is monitoring all assets (empty array) or specific asset
+                if (client.assets.length === 0 || client.assets.includes(assetId)) {
+                    console.log(`Sending asset data to client ${clientId}`);
                     this.sendToClient(clientId, {
-                        assetId,
-                        sensors: filteredData
+                        type: 'asset_data',
+                        data: assetData
                     });
-                } else {
-                    console.log(`No relevant data for client ${clientId}`);
                 }
             } catch (error) {
                 console.error(`Error broadcasting to client ${clientId}:`, error);
@@ -137,5 +154,5 @@ class SensorEventManager {
 }
 
 // Create a singleton instance
-const sensorEventManager = new SensorEventManager();
-module.exports = sensorEventManager;
+const assetEventManager = new AssetEventManager();
+module.exports = assetEventManager;

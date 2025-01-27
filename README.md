@@ -84,13 +84,40 @@ cd powerplant-backend
 npm install
 ```
 
-3. Set up environment variables in \`.env\`:
+3. Set up environment variables in `.env`:
 ```
-MONGODB_URI=your_mongodb_uri
-JWT_SECRET=your_jwt_secret
+# MongoDB Configuration
+MONGODB_URI=mongodb://localhost:27017/power_plant_db
+# or
+MONGODB_URI=mongodb+srv://<username>:<password>@<cluster>.mongodb.net/power_plant_db
+
+# Authentication
+JWT_SECRET=your_super_secure_jwt_secret_key_min_32_chars
+JWT_EXPIRES_IN=1h
+
+# Admin User Configuration
 ADMIN_EMAIL=admin@example.com
 ADMIN_PASSWORD=SecureAdminPassword123
+ADMIN_FIRST_NAME=Admin
+ADMIN_LAST_NAME=User
+ADMIN_USERNAME=admin
+
+# Server Configuration
+PORT=5000
+NODE_ENV=development
+
+# CORS Configuration (Frontend URL)
+CORS_ORIGIN=http://localhost:3000
+
+# Optional: Logging
+LOG_LEVEL=debug
 ```
+
+Make sure to:
+1. Replace the placeholder values with your actual configuration
+2. Keep the `.env` file secure and never commit it to version control
+3. Use strong, unique values for secrets and passwords
+4. Match the `CORS_ORIGIN` with your frontend URL
 
 4. Create admin user:
 ```
@@ -286,5 +313,3 @@ Create new role
 - Input validation and sanitization
 - Secure password requirements
 - Session management
-
-

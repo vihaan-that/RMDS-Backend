@@ -68,30 +68,40 @@ exports.sseMiddleware = (req, res, next) => {
 exports.streamSensorData = async (req, res, next) => {
     try {
         const { sensorId } = req.params;
-        console.log(`Client requesting live data for sensor ${sensorId}`);
+        console.log(`[DEBUG] Client requesting live data for sensor ${sensorId}`);
 
         // Validate sensor exists
         const sensor = await Sensor.findById(sensorId);
         if (!sensor) {
-            console.error(`Sensor ${sensorId} not found`);
+            console.error(`[DEBUG] Sensor ${sensorId} not found in database`);
             return res.status(404).json({
                 success: false,
                 error: 'Sensor not found'
             });
         }
 
-        console.log(`Found sensor:`, sensor);
+        console.log(`[DEBUG] Found sensor in database:`, {
+            id: sensor._id,
+            tagName: sensor.tagName,
+            unit: sensor.unit
+        });
 
         // Add client to event manager with specific sensor
         const clientId = sensorEventManager.addClient(res, [sensorId]);
-        console.log(`Added client ${clientId} for sensor ${sensorId}`);
+        console.log(`[DEBUG] Added client ${clientId} for sensor ${sensorId}`);
 
         // Send initial data
         const latestValue = await SensorValue.findOne({ sensor: sensorId })
             .sort({ timestamp: -1 });
         
+        console.log(`[DEBUG] Latest value query result for sensor ${sensorId}:`, latestValue);
+        
         if (latestValue) {
-            console.log(`Sending initial value for sensor ${sensorId}:`, latestValue);
+            console.log(`[DEBUG] Sending initial value for sensor ${sensorId}:`, {
+                value: latestValue.value,
+                timestamp: latestValue.timestamp,
+                unit: sensor.unit
+            });
             const data = {
                 value: latestValue.value,
                 timestamp: latestValue.timestamp,
@@ -99,17 +109,24 @@ exports.streamSensorData = async (req, res, next) => {
             };
             sensorEventManager.sendToClient(clientId, data);
         } else {
-            console.log(`No initial value found for sensor ${sensorId}`);
+            console.log(`[DEBUG] No initial value found for sensor ${sensorId} in SensorValue collection`);
+            // Send a placeholder value to prevent pending state
+            sensorEventManager.sendToClient(clientId, {
+                value: null,
+                timestamp: new Date(),
+                unit: sensor.unit,
+                status: 'No data available'
+            });
         }
 
         // Handle client disconnect
         req.on('close', () => {
-            console.log(`Client ${clientId} disconnected from sensor ${sensorId}`);
+            console.log(`[DEBUG] Client ${clientId} disconnected from sensor ${sensorId}`);
             sensorEventManager.removeClient(clientId);
         });
 
     } catch (error) {
-        console.error(`Error in streamSensorData:`, error);
+        console.error(`[DEBUG] Error in streamSensorData:`, error);
         if (!res.headersSent) {
             res.status(500).json({
                 success: false,

@@ -1,0 +1,1344 @@
+
+> powerplant-backend@1.0.0 dev
+> nodemon server.js
+
+[33m[nodemon] 2.0.22[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching path(s): *.*[39m
+[33m[nodemon] watching extensions: js,mjs,json[39m
+[32m[nodemon] starting `node server.js`[39m
+SensorEventManager initialized
+Server running on port 4000
+Connected to MongoDB
+Client requesting live data for sensor 6789baee50759da0609cf3aa
+Found sensor: {
+  _id: new ObjectId("6789baee50759da0609cf3aa"),
+  tagName: 'Sensor-1-1',
+  tagDescription: 'Description for Sensor-1-1',
+  unit: 'Celsius',
+  createdAt: 2025-01-17T02:05:34.545Z,
+  updatedAt: 2025-01-17T02:05:34.545Z,
+  __v: 0
+}
+Starting sensor value polling
+Adding new client 0 for sensors: [ '6789baee50759da0609cf3aa' ]
+Total clients connected: 1
+Added client 0 for sensor 6789baee50759da0609cf3aa
+Sending initial value for sensor 6789baee50759da0609cf3aa: {
+  _id: new ObjectId("6789c22f50759da0609e1cc5"),
+  sensor: new ObjectId("6789baee50759da0609cf3aa"),
+  value: 97.06,
+  timestamp: 2025-01-17T02:36:31.545Z,
+  __v: 0
+}
+Attempting to send data to client 0: { value: 97.06, timestamp: 2025-01-17T02:36:31.545Z, unit: 'Celsius' }
+Sending message to client 0: data: {"value":97.06,"timestamp":"2025-01-17T02:36:31.545Z","unit":"Celsius"}
+
+
+Data sent successfully to client 0
+Client 0 connection closed, removing client
+Removing client 0
+Client 0 removed. Total clients: 0
+[0mGET /api/live/sensor/6789baee50759da0609cf3aa [32m200[0m 9.212 ms - -[0m
+Client 0 disconnected from sensor 6789baee50759da0609cf3aa
+Removing client 0
+Client 0 not found
+No active clients, stopping polling
+Client requesting live data for sensor 6789baee50759da0609cf3c0
+Found sensor: {
+  _id: new ObjectId("6789baee50759da0609cf3c0"),
+  tagName: 'Sensor-2-1',
+  tagDescription: 'Description for Sensor-2-1',
+  unit: 'kW',
+  createdAt: 2025-01-17T02:05:34.575Z,
+  updatedAt: 2025-01-17T02:05:34.575Z,
+  __v: 0
+}
+Starting sensor value polling
+Adding new client 1 for sensors: [ '6789baee50759da0609cf3c0' ]
+Total clients connected: 1
+Added client 1 for sensor 6789baee50759da0609cf3c0
+Sending initial value for sensor 6789baee50759da0609cf3c0: {
+  _id: new ObjectId("6789c23150759da0609e1d21"),
+  sensor: new ObjectId("6789baee50759da0609cf3c0"),
+  value: 458.22,
+  timestamp: 2025-01-17T02:36:33.547Z,
+  __v: 0
+}
+Attempting to send data to client 1: { value: 458.22, timestamp: 2025-01-17T02:36:33.547Z, unit: 'kW' }
+Sending message to client 1: data: {"value":458.22,"timestamp":"2025-01-17T02:36:33.547Z","unit":"kW"}
+
+
+Data sent successfully to client 1
+Polling for new values since 2025-01-17T02:36:34.011Z
+Found 20 new values
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3ae',
+  value: 1384.62,
+  timestamp: 2025-01-17T02:36:34.548Z,
+  unit: 'RPM'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3ae: { value: 1384.62, timestamp: 2025-01-17T02:36:34.548Z, unit: 'RPM' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3ae. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3ae
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3b8',
+  value: 170.33,
+  timestamp: 2025-01-17T02:36:34.548Z,
+  unit: 'kPa'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3b8: { value: 170.33, timestamp: 2025-01-17T02:36:34.548Z, unit: 'kPa' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3b8. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3b8
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3ac',
+  value: 46.25,
+  timestamp: 2025-01-17T02:36:34.548Z,
+  unit: 'Celsius'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3ac: { value: 46.25, timestamp: 2025-01-17T02:36:34.548Z, unit: 'Celsius' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3ac. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3ac
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3aa',
+  value: 97.73,
+  timestamp: 2025-01-17T02:36:34.548Z,
+  unit: 'Celsius'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3aa: { value: 97.73, timestamp: 2025-01-17T02:36:34.548Z, unit: 'Celsius' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3aa. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3aa
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3ba',
+  value: 249.6,
+  timestamp: 2025-01-17T02:36:34.548Z,
+  unit: 'kPa'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3ba: { value: 249.6, timestamp: 2025-01-17T02:36:34.548Z, unit: 'kPa' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3ba. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3ba
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3b2',
+  value: 1899.33,
+  timestamp: 2025-01-17T02:36:34.548Z,
+  unit: 'RPM'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3b2: { value: 1899.33, timestamp: 2025-01-17T02:36:34.548Z, unit: 'RPM' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3b2. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3b2
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3b0',
+  value: 318.81,
+  timestamp: 2025-01-17T02:36:34.548Z,
+  unit: 'kW'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3b0: { value: 318.81, timestamp: 2025-01-17T02:36:34.548Z, unit: 'kW' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3b0. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3b0
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3b4',
+  value: 796.99,
+  timestamp: 2025-01-17T02:36:34.548Z,
+  unit: 'RPM'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3b4: { value: 796.99, timestamp: 2025-01-17T02:36:34.548Z, unit: 'RPM' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3b4. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3b4
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3b6',
+  value: 242.51,
+  timestamp: 2025-01-17T02:36:34.548Z,
+  unit: 'kPa'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3b6: { value: 242.51, timestamp: 2025-01-17T02:36:34.548Z, unit: 'kPa' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3b6. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3b6
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3c6',
+  value: 1811.61,
+  timestamp: 2025-01-17T02:36:34.548Z,
+  unit: 'RPM'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3c6: { value: 1811.61, timestamp: 2025-01-17T02:36:34.548Z, unit: 'RPM' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3c6. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3c6
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3c2',
+  value: 99.04,
+  timestamp: 2025-01-17T02:36:34.548Z,
+  unit: 'Celsius'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3c2: { value: 99.04, timestamp: 2025-01-17T02:36:34.548Z, unit: 'Celsius' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3c2. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3c2
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3ca',
+  value: 1860.22,
+  timestamp: 2025-01-17T02:36:34.548Z,
+  unit: 'RPM'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3ca: { value: 1860.22, timestamp: 2025-01-17T02:36:34.548Z, unit: 'RPM' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3ca. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3ca
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3c4',
+  value: 1238.1,
+  timestamp: 2025-01-17T02:36:34.548Z,
+  unit: 'RPM'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3c4: { value: 1238.1, timestamp: 2025-01-17T02:36:34.548Z, unit: 'RPM' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3c4. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3c4
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3bc',
+  value: 341.16,
+  timestamp: 2025-01-17T02:36:34.548Z,
+  unit: 'kW'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3bc: { value: 341.16, timestamp: 2025-01-17T02:36:34.548Z, unit: 'kW' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3bc. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3bc
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3c0',
+  value: 455.9,
+  timestamp: 2025-01-17T02:36:34.548Z,
+  unit: 'kW'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3c0: { value: 455.9, timestamp: 2025-01-17T02:36:34.548Z, unit: 'kW' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3c0. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Sending data to client 1
+Attempting to send data to client 1: {
+  sensorId: '6789baee50759da0609cf3c0',
+  value: 455.9,
+  timestamp: 2025-01-17T02:36:34.548Z,
+  unit: 'kW'
+}
+Sending message to client 1: data: {"sensorId":"6789baee50759da0609cf3c0","value":455.9,"timestamp":"2025-01-17T02:36:34.548Z","unit":"kW"}
+
+
+Data sent successfully to client 1
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3c8',
+  value: 89.42,
+  timestamp: 2025-01-17T02:36:34.548Z,
+  unit: 'Celsius'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3c8: { value: 89.42, timestamp: 2025-01-17T02:36:34.548Z, unit: 'Celsius' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3c8. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3c8
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3d0',
+  value: 69.69,
+  timestamp: 2025-01-17T02:36:34.548Z,
+  unit: 'Celsius'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3d0: { value: 69.69, timestamp: 2025-01-17T02:36:34.548Z, unit: 'Celsius' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3d0. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3d0
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3d2',
+  value: 1558.9,
+  timestamp: 2025-01-17T02:36:34.548Z,
+  unit: 'RPM'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3d2: { value: 1558.9, timestamp: 2025-01-17T02:36:34.548Z, unit: 'RPM' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3d2. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3d2
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3cc',
+  value: 2197.47,
+  timestamp: 2025-01-17T02:36:34.548Z,
+  unit: 'RPM'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3cc: { value: 2197.47, timestamp: 2025-01-17T02:36:34.548Z, unit: 'RPM' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3cc. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3cc
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3ce',
+  value: 1342.77,
+  timestamp: 2025-01-17T02:36:34.548Z,
+  unit: 'RPM'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3ce: { value: 1342.77, timestamp: 2025-01-17T02:36:34.548Z, unit: 'RPM' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3ce. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3ce
+Polling for new values since 2025-01-17T02:36:35.011Z
+Found 20 new values
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3ac',
+  value: 46.11,
+  timestamp: 2025-01-17T02:36:35.548Z,
+  unit: 'Celsius'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3ac: { value: 46.11, timestamp: 2025-01-17T02:36:35.548Z, unit: 'Celsius' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3ac. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3ac
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3b4',
+  value: 790.98,
+  timestamp: 2025-01-17T02:36:35.548Z,
+  unit: 'RPM'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3b4: { value: 790.98, timestamp: 2025-01-17T02:36:35.548Z, unit: 'RPM' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3b4. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3b4
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3aa',
+  value: 98.11,
+  timestamp: 2025-01-17T02:36:35.548Z,
+  unit: 'Celsius'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3aa: { value: 98.11, timestamp: 2025-01-17T02:36:35.548Z, unit: 'Celsius' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3aa. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3aa
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3bc',
+  value: 333.61,
+  timestamp: 2025-01-17T02:36:35.548Z,
+  unit: 'kW'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3bc: { value: 333.61, timestamp: 2025-01-17T02:36:35.548Z, unit: 'kW' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3bc. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3bc
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3ae',
+  value: 1400,
+  timestamp: 2025-01-17T02:36:35.548Z,
+  unit: 'RPM'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3ae: { value: 1400, timestamp: 2025-01-17T02:36:35.548Z, unit: 'RPM' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3ae. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3ae
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3b0',
+  value: 325.49,
+  timestamp: 2025-01-17T02:36:35.548Z,
+  unit: 'kW'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3b0: { value: 325.49, timestamp: 2025-01-17T02:36:35.548Z, unit: 'kW' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3b0. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3b0
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3b2',
+  value: 1900.63,
+  timestamp: 2025-01-17T02:36:35.548Z,
+  unit: 'RPM'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3b2: { value: 1900.63, timestamp: 2025-01-17T02:36:35.548Z, unit: 'RPM' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3b2. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3b2
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3c4',
+  value: 1226.68,
+  timestamp: 2025-01-17T02:36:35.548Z,
+  unit: 'RPM'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3c4: { value: 1226.68, timestamp: 2025-01-17T02:36:35.548Z, unit: 'RPM' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3c4. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3c4
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3c2',
+  value: 99.97,
+  timestamp: 2025-01-17T02:36:35.548Z,
+  unit: 'Celsius'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3c2: { value: 99.97, timestamp: 2025-01-17T02:36:35.548Z, unit: 'Celsius' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3c2. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3c2
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3ba',
+  value: 252.23,
+  timestamp: 2025-01-17T02:36:35.548Z,
+  unit: 'kPa'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3ba: { value: 252.23, timestamp: 2025-01-17T02:36:35.548Z, unit: 'kPa' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3ba. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3ba
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3b8',
+  value: 170.18,
+  timestamp: 2025-01-17T02:36:35.548Z,
+  unit: 'kPa'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3b8: { value: 170.18, timestamp: 2025-01-17T02:36:35.548Z, unit: 'kPa' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3b8. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3b8
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3c0',
+  value: 450.7,
+  timestamp: 2025-01-17T02:36:35.548Z,
+  unit: 'kW'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3c0: { value: 450.7, timestamp: 2025-01-17T02:36:35.548Z, unit: 'kW' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3c0. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Sending data to client 1
+Attempting to send data to client 1: {
+  sensorId: '6789baee50759da0609cf3c0',
+  value: 450.7,
+  timestamp: 2025-01-17T02:36:35.548Z,
+  unit: 'kW'
+}
+Sending message to client 1: data: {"sensorId":"6789baee50759da0609cf3c0","value":450.7,"timestamp":"2025-01-17T02:36:35.548Z","unit":"kW"}
+
+
+Data sent successfully to client 1
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3b6',
+  value: 246.45,
+  timestamp: 2025-01-17T02:36:35.548Z,
+  unit: 'kPa'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3b6: { value: 246.45, timestamp: 2025-01-17T02:36:35.548Z, unit: 'kPa' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3b6. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3b6
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3cc',
+  value: 2189.71,
+  timestamp: 2025-01-17T02:36:35.548Z,
+  unit: 'RPM'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3cc: { value: 2189.71, timestamp: 2025-01-17T02:36:35.548Z, unit: 'RPM' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3cc. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3cc
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3d0',
+  value: 70.2,
+  timestamp: 2025-01-17T02:36:35.548Z,
+  unit: 'Celsius'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3d0: { value: 70.2, timestamp: 2025-01-17T02:36:35.548Z, unit: 'Celsius' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3d0. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3d0
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3c6',
+  value: 1798.6,
+  timestamp: 2025-01-17T02:36:35.548Z,
+  unit: 'RPM'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3c6: { value: 1798.6, timestamp: 2025-01-17T02:36:35.548Z, unit: 'RPM' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3c6. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3c6
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3ca',
+  value: 1850.94,
+  timestamp: 2025-01-17T02:36:35.548Z,
+  unit: 'RPM'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3ca: { value: 1850.94, timestamp: 2025-01-17T02:36:35.548Z, unit: 'RPM' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3ca. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3ca
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3d2',
+  value: 1554.31,
+  timestamp: 2025-01-17T02:36:35.548Z,
+  unit: 'RPM'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3d2: { value: 1554.31, timestamp: 2025-01-17T02:36:35.548Z, unit: 'RPM' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3d2. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3d2
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3c8',
+  value: 89.06,
+  timestamp: 2025-01-17T02:36:35.548Z,
+  unit: 'Celsius'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3c8: { value: 89.06, timestamp: 2025-01-17T02:36:35.548Z, unit: 'Celsius' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3c8. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3c8
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3ce',
+  value: 1358.67,
+  timestamp: 2025-01-17T02:36:35.548Z,
+  unit: 'RPM'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3ce: { value: 1358.67, timestamp: 2025-01-17T02:36:35.548Z, unit: 'RPM' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3ce. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3ce
+Polling for new values since 2025-01-17T02:36:36.012Z
+Found 20 new values
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3b2',
+  value: 1900.12,
+  timestamp: 2025-01-17T02:36:36.549Z,
+  unit: 'RPM'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3b2: { value: 1900.12, timestamp: 2025-01-17T02:36:36.549Z, unit: 'RPM' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3b2. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3b2
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3b4',
+  value: 767.14,
+  timestamp: 2025-01-17T02:36:36.549Z,
+  unit: 'RPM'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3b4: { value: 767.14, timestamp: 2025-01-17T02:36:36.549Z, unit: 'RPM' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3b4. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3b4
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3aa',
+  value: 98.81,
+  timestamp: 2025-01-17T02:36:36.549Z,
+  unit: 'Celsius'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3aa: { value: 98.81, timestamp: 2025-01-17T02:36:36.549Z, unit: 'Celsius' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3aa. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3aa
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3ac',
+  value: 47.01,
+  timestamp: 2025-01-17T02:36:36.549Z,
+  unit: 'Celsius'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3ac: { value: 47.01, timestamp: 2025-01-17T02:36:36.549Z, unit: 'Celsius' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3ac. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3ac
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3b0',
+  value: 333.41,
+  timestamp: 2025-01-17T02:36:36.549Z,
+  unit: 'kW'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3b0: { value: 333.41, timestamp: 2025-01-17T02:36:36.549Z, unit: 'kW' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3b0. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3b0
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3b8',
+  value: 166.47,
+  timestamp: 2025-01-17T02:36:36.549Z,
+  unit: 'kPa'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3b8: { value: 166.47, timestamp: 2025-01-17T02:36:36.549Z, unit: 'kPa' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3b8. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3b8
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3ae',
+  value: 1411.3,
+  timestamp: 2025-01-17T02:36:36.549Z,
+  unit: 'RPM'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3ae: { value: 1411.3, timestamp: 2025-01-17T02:36:36.549Z, unit: 'RPM' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3ae. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3ae
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3b6',
+  value: 241.65,
+  timestamp: 2025-01-17T02:36:36.549Z,
+  unit: 'kPa'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3b6: { value: 241.65, timestamp: 2025-01-17T02:36:36.549Z, unit: 'kPa' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3b6. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3b6
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3bc',
+  value: 325.8,
+  timestamp: 2025-01-17T02:36:36.549Z,
+  unit: 'kW'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3bc: { value: 325.8, timestamp: 2025-01-17T02:36:36.549Z, unit: 'kW' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3bc. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3bc
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3ba',
+  value: 248.62,
+  timestamp: 2025-01-17T02:36:36.549Z,
+  unit: 'kPa'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3ba: { value: 248.62, timestamp: 2025-01-17T02:36:36.549Z, unit: 'kPa' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3ba. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3ba
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3c4',
+  value: 1248.26,
+  timestamp: 2025-01-17T02:36:36.549Z,
+  unit: 'RPM'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3c4: { value: 1248.26, timestamp: 2025-01-17T02:36:36.549Z, unit: 'RPM' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3c4. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3c4
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3c0',
+  value: 458.81,
+  timestamp: 2025-01-17T02:36:36.549Z,
+  unit: 'kW'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3c0: { value: 458.81, timestamp: 2025-01-17T02:36:36.549Z, unit: 'kW' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3c0. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Sending data to client 1
+Attempting to send data to client 1: {
+  sensorId: '6789baee50759da0609cf3c0',
+  value: 458.81,
+  timestamp: 2025-01-17T02:36:36.549Z,
+  unit: 'kW'
+}
+Sending message to client 1: data: {"sensorId":"6789baee50759da0609cf3c0","value":458.81,"timestamp":"2025-01-17T02:36:36.549Z","unit":"kW"}
+
+
+Data sent successfully to client 1
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3c2',
+  value: 100,
+  timestamp: 2025-01-17T02:36:36.549Z,
+  unit: 'Celsius'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3c2: { value: 100, timestamp: 2025-01-17T02:36:36.549Z, unit: 'Celsius' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3c2. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3c2
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3ce',
+  value: 1369.11,
+  timestamp: 2025-01-17T02:36:36.549Z,
+  unit: 'RPM'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3ce: { value: 1369.11, timestamp: 2025-01-17T02:36:36.549Z, unit: 'RPM' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3ce. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3ce
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3c8',
+  value: 89.16,
+  timestamp: 2025-01-17T02:36:36.549Z,
+  unit: 'Celsius'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3c8: { value: 89.16, timestamp: 2025-01-17T02:36:36.549Z, unit: 'Celsius' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3c8. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3c8
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3c6',
+  value: 1774.3,
+  timestamp: 2025-01-17T02:36:36.549Z,
+  unit: 'RPM'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3c6: { value: 1774.3, timestamp: 2025-01-17T02:36:36.549Z, unit: 'RPM' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3c6. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3c6
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3ca',
+  value: 1837.2,
+  timestamp: 2025-01-17T02:36:36.549Z,
+  unit: 'RPM'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3ca: { value: 1837.2, timestamp: 2025-01-17T02:36:36.549Z, unit: 'RPM' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3ca. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3ca
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3d0',
+  value: 69.86,
+  timestamp: 2025-01-17T02:36:36.549Z,
+  unit: 'Celsius'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3d0: { value: 69.86, timestamp: 2025-01-17T02:36:36.549Z, unit: 'Celsius' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3d0. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3d0
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3cc',
+  value: 2206.33,
+  timestamp: 2025-01-17T02:36:36.549Z,
+  unit: 'RPM'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3cc: { value: 2206.33, timestamp: 2025-01-17T02:36:36.549Z, unit: 'RPM' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3cc. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3cc
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3d2',
+  value: 1572.44,
+  timestamp: 2025-01-17T02:36:36.549Z,
+  unit: 'RPM'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3d2: { value: 1572.44, timestamp: 2025-01-17T02:36:36.549Z, unit: 'RPM' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3d2. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3d2
+Polling for new values since 2025-01-17T02:36:37.013Z
+Found 20 new values
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3aa',
+  value: 99.69,
+  timestamp: 2025-01-17T02:36:37.550Z,
+  unit: 'Celsius'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3aa: { value: 99.69, timestamp: 2025-01-17T02:36:37.550Z, unit: 'Celsius' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3aa. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3aa
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3ae',
+  value: 1411.4,
+  timestamp: 2025-01-17T02:36:37.550Z,
+  unit: 'RPM'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3ae: { value: 1411.4, timestamp: 2025-01-17T02:36:37.550Z, unit: 'RPM' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3ae. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3ae
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3b0',
+  value: 332.14,
+  timestamp: 2025-01-17T02:36:37.550Z,
+  unit: 'kW'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3b0: { value: 332.14, timestamp: 2025-01-17T02:36:37.550Z, unit: 'kW' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3b0. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3b0
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3ac',
+  value: 46.36,
+  timestamp: 2025-01-17T02:36:37.550Z,
+  unit: 'Celsius'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3ac: { value: 46.36, timestamp: 2025-01-17T02:36:37.550Z, unit: 'Celsius' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3ac. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3ac
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3b8',
+  value: 161.67,
+  timestamp: 2025-01-17T02:36:37.550Z,
+  unit: 'kPa'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3b8: { value: 161.67, timestamp: 2025-01-17T02:36:37.550Z, unit: 'kPa' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3b8. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3b8
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3b4',
+  value: 745.79,
+  timestamp: 2025-01-17T02:36:37.550Z,
+  unit: 'RPM'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3b4: { value: 745.79, timestamp: 2025-01-17T02:36:37.550Z, unit: 'RPM' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3b4. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3b4
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3b2',
+  value: 1894.41,
+  timestamp: 2025-01-17T02:36:37.550Z,
+  unit: 'RPM'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3b2: { value: 1894.41, timestamp: 2025-01-17T02:36:37.550Z, unit: 'RPM' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3b2. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3b2
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3b6',
+  value: 241.77,
+  timestamp: 2025-01-17T02:36:37.550Z,
+  unit: 'kPa'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3b6: { value: 241.77, timestamp: 2025-01-17T02:36:37.550Z, unit: 'kPa' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3b6. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3b6
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3ba',
+  value: 246.06,
+  timestamp: 2025-01-17T02:36:37.550Z,
+  unit: 'kPa'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3ba: { value: 246.06, timestamp: 2025-01-17T02:36:37.550Z, unit: 'kPa' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3ba. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3ba
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3c0',
+  value: 452.67,
+  timestamp: 2025-01-17T02:36:37.550Z,
+  unit: 'kW'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3c0: { value: 452.67, timestamp: 2025-01-17T02:36:37.550Z, unit: 'kW' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3c0. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Sending data to client 1
+Attempting to send data to client 1: {
+  sensorId: '6789baee50759da0609cf3c0',
+  value: 452.67,
+  timestamp: 2025-01-17T02:36:37.550Z,
+  unit: 'kW'
+}
+Sending message to client 1: data: {"sensorId":"6789baee50759da0609cf3c0","value":452.67,"timestamp":"2025-01-17T02:36:37.550Z","unit":"kW"}
+
+
+Data sent successfully to client 1
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3bc',
+  value: 329.17,
+  timestamp: 2025-01-17T02:36:37.550Z,
+  unit: 'kW'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3bc: { value: 329.17, timestamp: 2025-01-17T02:36:37.550Z, unit: 'kW' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3bc. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3bc
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3c8',
+  value: 88.57,
+  timestamp: 2025-01-17T02:36:37.550Z,
+  unit: 'Celsius'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3c8: { value: 88.57, timestamp: 2025-01-17T02:36:37.550Z, unit: 'Celsius' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3c8. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3c8
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3c2',
+  value: 100,
+  timestamp: 2025-01-17T02:36:37.550Z,
+  unit: 'Celsius'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3c2: { value: 100, timestamp: 2025-01-17T02:36:37.550Z, unit: 'Celsius' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3c2. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3c2
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3ca',
+  value: 1818.97,
+  timestamp: 2025-01-17T02:36:37.550Z,
+  unit: 'RPM'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3ca: { value: 1818.97, timestamp: 2025-01-17T02:36:37.550Z, unit: 'RPM' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3ca. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3ca
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3cc',
+  value: 2206.94,
+  timestamp: 2025-01-17T02:36:37.550Z,
+  unit: 'RPM'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3cc: { value: 2206.94, timestamp: 2025-01-17T02:36:37.550Z, unit: 'RPM' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3cc. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3cc
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3c4',
+  value: 1256.37,
+  timestamp: 2025-01-17T02:36:37.550Z,
+  unit: 'RPM'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3c4: { value: 1256.37, timestamp: 2025-01-17T02:36:37.550Z, unit: 'RPM' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3c4. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3c4
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3c6',
+  value: 1791.09,
+  timestamp: 2025-01-17T02:36:37.550Z,
+  unit: 'RPM'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3c6: { value: 1791.09, timestamp: 2025-01-17T02:36:37.550Z, unit: 'RPM' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3c6. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3c6
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3d2',
+  value: 1554.88,
+  timestamp: 2025-01-17T02:36:37.550Z,
+  unit: 'RPM'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3d2: { value: 1554.88, timestamp: 2025-01-17T02:36:37.550Z, unit: 'RPM' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3d2. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3d2
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3d0',
+  value: 70.37,
+  timestamp: 2025-01-17T02:36:37.550Z,
+  unit: 'Celsius'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3d0: { value: 70.37, timestamp: 2025-01-17T02:36:37.550Z, unit: 'Celsius' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3d0. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3d0
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3ce',
+  value: 1345.77,
+  timestamp: 2025-01-17T02:36:37.550Z,
+  unit: 'RPM'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3ce: { value: 1345.77, timestamp: 2025-01-17T02:36:37.550Z, unit: 'RPM' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3ce. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3ce
+Polling for new values since 2025-01-17T02:36:38.014Z
+Found 20 new values
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3aa',
+  value: 99.64,
+  timestamp: 2025-01-17T02:36:38.551Z,
+  unit: 'Celsius'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3aa: { value: 99.64, timestamp: 2025-01-17T02:36:38.551Z, unit: 'Celsius' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3aa. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3aa
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3ac',
+  value: 46.07,
+  timestamp: 2025-01-17T02:36:38.551Z,
+  unit: 'Celsius'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3ac: { value: 46.07, timestamp: 2025-01-17T02:36:38.551Z, unit: 'Celsius' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3ac. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3ac
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3b4',
+  value: 768.69,
+  timestamp: 2025-01-17T02:36:38.551Z,
+  unit: 'RPM'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3b4: { value: 768.69, timestamp: 2025-01-17T02:36:38.551Z, unit: 'RPM' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3b4. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3b4
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3b0',
+  value: 339.9,
+  timestamp: 2025-01-17T02:36:38.551Z,
+  unit: 'kW'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3b0: { value: 339.9, timestamp: 2025-01-17T02:36:38.551Z, unit: 'kW' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3b0. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3b0
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3b2',
+  value: 1915.93,
+  timestamp: 2025-01-17T02:36:38.551Z,
+  unit: 'RPM'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3b2: { value: 1915.93, timestamp: 2025-01-17T02:36:38.551Z, unit: 'RPM' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3b2. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3b2
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3ae',
+  value: 1397.19,
+  timestamp: 2025-01-17T02:36:38.551Z,
+  unit: 'RPM'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3ae: { value: 1397.19, timestamp: 2025-01-17T02:36:38.551Z, unit: 'RPM' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3ae. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3ae
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3b8',
+  value: 165.65,
+  timestamp: 2025-01-17T02:36:38.551Z,
+  unit: 'kPa'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3b8: { value: 165.65, timestamp: 2025-01-17T02:36:38.551Z, unit: 'kPa' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3b8. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3b8
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3b6',
+  value: 242.19,
+  timestamp: 2025-01-17T02:36:38.551Z,
+  unit: 'kPa'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3b6: { value: 242.19, timestamp: 2025-01-17T02:36:38.551Z, unit: 'kPa' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3b6. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3b6
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3ba',
+  value: 245.17,
+  timestamp: 2025-01-17T02:36:38.551Z,
+  unit: 'kPa'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3ba: { value: 245.17, timestamp: 2025-01-17T02:36:38.551Z, unit: 'kPa' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3ba. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3ba
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3bc',
+  value: 331.62,
+  timestamp: 2025-01-17T02:36:38.551Z,
+  unit: 'kW'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3bc: { value: 331.62, timestamp: 2025-01-17T02:36:38.551Z, unit: 'kW' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3bc. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3bc
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3c2',
+  value: 99.09,
+  timestamp: 2025-01-17T02:36:38.551Z,
+  unit: 'Celsius'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3c2: { value: 99.09, timestamp: 2025-01-17T02:36:38.551Z, unit: 'Celsius' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3c2. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3c2
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3c4',
+  value: 1253.28,
+  timestamp: 2025-01-17T02:36:38.551Z,
+  unit: 'RPM'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3c4: { value: 1253.28, timestamp: 2025-01-17T02:36:38.551Z, unit: 'RPM' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3c4. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3c4
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3c0',
+  value: 453.45,
+  timestamp: 2025-01-17T02:36:38.551Z,
+  unit: 'kW'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3c0: { value: 453.45, timestamp: 2025-01-17T02:36:38.551Z, unit: 'kW' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3c0. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Sending data to client 1
+Attempting to send data to client 1: {
+  sensorId: '6789baee50759da0609cf3c0',
+  value: 453.45,
+  timestamp: 2025-01-17T02:36:38.551Z,
+  unit: 'kW'
+}
+Sending message to client 1: data: {"sensorId":"6789baee50759da0609cf3c0","value":453.45,"timestamp":"2025-01-17T02:36:38.551Z","unit":"kW"}
+
+
+Data sent successfully to client 1
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3ca',
+  value: 1837.58,
+  timestamp: 2025-01-17T02:36:38.551Z,
+  unit: 'RPM'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3ca: { value: 1837.58, timestamp: 2025-01-17T02:36:38.551Z, unit: 'RPM' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3ca. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3ca
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3cc',
+  value: 2224.11,
+  timestamp: 2025-01-17T02:36:38.551Z,
+  unit: 'RPM'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3cc: { value: 2224.11, timestamp: 2025-01-17T02:36:38.551Z, unit: 'RPM' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3cc. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3cc
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3c8',
+  value: 88.26,
+  timestamp: 2025-01-17T02:36:38.551Z,
+  unit: 'Celsius'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3c8: { value: 88.26, timestamp: 2025-01-17T02:36:38.551Z, unit: 'Celsius' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3c8. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3c8
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3c6',
+  value: 1796.99,
+  timestamp: 2025-01-17T02:36:38.551Z,
+  unit: 'RPM'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3c6: { value: 1796.99, timestamp: 2025-01-17T02:36:38.551Z, unit: 'RPM' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3c6. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3c6
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3ce',
+  value: 1351.03,
+  timestamp: 2025-01-17T02:36:38.551Z,
+  unit: 'RPM'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3ce: { value: 1351.03, timestamp: 2025-01-17T02:36:38.551Z, unit: 'RPM' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3ce. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3ce
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3d0',
+  value: 69.68,
+  timestamp: 2025-01-17T02:36:38.551Z,
+  unit: 'Celsius'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3d0: { value: 69.68, timestamp: 2025-01-17T02:36:38.551Z, unit: 'Celsius' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3d0. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3d0
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3d2',
+  value: 1550.61,
+  timestamp: 2025-01-17T02:36:38.551Z,
+  unit: 'RPM'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3d2: { value: 1550.61, timestamp: 2025-01-17T02:36:38.551Z, unit: 'RPM' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3d2. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3d2
+Polling for new values since 2025-01-17T02:36:39.015Z
+Found 20 new values
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3b2',
+  value: 1909.93,
+  timestamp: 2025-01-17T02:36:39.553Z,
+  unit: 'RPM'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3b2: { value: 1909.93, timestamp: 2025-01-17T02:36:39.553Z, unit: 'RPM' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3b2. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3b2
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3ba',
+  value: 244.84,
+  timestamp: 2025-01-17T02:36:39.553Z,
+  unit: 'kPa'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3ba: { value: 244.84, timestamp: 2025-01-17T02:36:39.553Z, unit: 'kPa' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3ba. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3ba
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3ae',
+  value: 1394.18,
+  timestamp: 2025-01-17T02:36:39.553Z,
+  unit: 'RPM'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3ae: { value: 1394.18, timestamp: 2025-01-17T02:36:39.553Z, unit: 'RPM' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3ae. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3ae
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3bc',
+  value: 331.16,
+  timestamp: 2025-01-17T02:36:39.553Z,
+  unit: 'kW'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3bc: { value: 331.16, timestamp: 2025-01-17T02:36:39.553Z, unit: 'kW' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3bc. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3bc
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3aa',
+  value: 100,
+  timestamp: 2025-01-17T02:36:39.553Z,
+  unit: 'Celsius'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3aa: { value: 100, timestamp: 2025-01-17T02:36:39.553Z, unit: 'Celsius' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3aa. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3aa
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3ac',
+  value: 45.33,
+  timestamp: 2025-01-17T02:36:39.553Z,
+  unit: 'Celsius'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3ac: { value: 45.33, timestamp: 2025-01-17T02:36:39.553Z, unit: 'Celsius' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3ac. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3ac
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3b6',
+  value: 242.89,
+  timestamp: 2025-01-17T02:36:39.553Z,
+  unit: 'kPa'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3b6: { value: 242.89, timestamp: 2025-01-17T02:36:39.553Z, unit: 'kPa' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3b6. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3b6
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3b4',
+  value: 757.31,
+  timestamp: 2025-01-17T02:36:39.553Z,
+  unit: 'RPM'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3b4: { value: 757.31, timestamp: 2025-01-17T02:36:39.553Z, unit: 'RPM' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3b4. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3b4
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3b0',
+  value: 338.34,
+  timestamp: 2025-01-17T02:36:39.553Z,
+  unit: 'kW'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3b0: { value: 338.34, timestamp: 2025-01-17T02:36:39.553Z, unit: 'kW' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3b0. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3b0
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3c0',
+  value: 452.74,
+  timestamp: 2025-01-17T02:36:39.553Z,
+  unit: 'kW'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3c0: { value: 452.74, timestamp: 2025-01-17T02:36:39.553Z, unit: 'kW' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3c0. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Sending data to client 1
+Attempting to send data to client 1: {
+  sensorId: '6789baee50759da0609cf3c0',
+  value: 452.74,
+  timestamp: 2025-01-17T02:36:39.553Z,
+  unit: 'kW'
+}
+Sending message to client 1: data: {"sensorId":"6789baee50759da0609cf3c0","value":452.74,"timestamp":"2025-01-17T02:36:39.553Z","unit":"kW"}
+
+
+Data sent successfully to client 1
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3b8',
+  value: 161,
+  timestamp: 2025-01-17T02:36:39.553Z,
+  unit: 'kPa'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3b8: { value: 161, timestamp: 2025-01-17T02:36:39.553Z, unit: 'kPa' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3b8. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3b8
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3c4',
+  value: 1249.26,
+  timestamp: 2025-01-17T02:36:39.553Z,
+  unit: 'RPM'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3c4: { value: 1249.26, timestamp: 2025-01-17T02:36:39.553Z, unit: 'RPM' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3c4. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3c4
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3c6',
+  value: 1794.37,
+  timestamp: 2025-01-17T02:36:39.553Z,
+  unit: 'RPM'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3c6: { value: 1794.37, timestamp: 2025-01-17T02:36:39.553Z, unit: 'RPM' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3c6. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3c6
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3c8',
+  value: 88.9,
+  timestamp: 2025-01-17T02:36:39.553Z,
+  unit: 'Celsius'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3c8: { value: 88.9, timestamp: 2025-01-17T02:36:39.553Z, unit: 'Celsius' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3c8. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3c8
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3c2',
+  value: 99.4,
+  timestamp: 2025-01-17T02:36:39.553Z,
+  unit: 'Celsius'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3c2: { value: 99.4, timestamp: 2025-01-17T02:36:39.553Z, unit: 'Celsius' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3c2. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3c2
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3ce',
+  value: 1353.38,
+  timestamp: 2025-01-17T02:36:39.553Z,
+  unit: 'RPM'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3ce: { value: 1353.38, timestamp: 2025-01-17T02:36:39.553Z, unit: 'RPM' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3ce. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3ce
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3ca',
+  value: 1834.69,
+  timestamp: 2025-01-17T02:36:39.553Z,
+  unit: 'RPM'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3ca: { value: 1834.69, timestamp: 2025-01-17T02:36:39.553Z, unit: 'RPM' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3ca. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3ca
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3d0',
+  value: 68.91,
+  timestamp: 2025-01-17T02:36:39.553Z,
+  unit: 'Celsius'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3d0: { value: 68.91, timestamp: 2025-01-17T02:36:39.553Z, unit: 'Celsius' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3d0. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3d0
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3d2',
+  value: 1536.9,
+  timestamp: 2025-01-17T02:36:39.553Z,
+  unit: 'RPM'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3d2: { value: 1536.9, timestamp: 2025-01-17T02:36:39.553Z, unit: 'RPM' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3d2. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3d2
+Broadcasting sensor data: {
+  sensorId: '6789baee50759da0609cf3cc',
+  value: 2212.83,
+  timestamp: 2025-01-17T02:36:39.553Z,
+  unit: 'RPM'
+}
+Broadcasting sensor data for sensor 6789baee50759da0609cf3cc: { value: 2212.83, timestamp: 2025-01-17T02:36:39.553Z, unit: 'RPM' }
+Current clients: 1
+Checking client 1 for sensor 6789baee50759da0609cf3cc. Monitoring sensors: [ '6789baee50759da0609cf3c0' ]
+Client 1 not monitoring sensor 6789baee50759da0609cf3cc

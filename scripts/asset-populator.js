@@ -32,7 +32,7 @@ async function seedDatabase() {
             const sensors = [];
 
             // Create 10 sensors for each asset
-            for (let j = 1; j <= 10; j++) {
+            for (let j = 1; j <= 7; j++) {
                 const tagName = `Sensor-${i}-${j}`;
                 const tagDescription = `Description for ${tagName}`;
                 const unit = ['Celsius', 'kW', 'kPa', 'RPM'][Math.floor(Math.random() * 4)];
